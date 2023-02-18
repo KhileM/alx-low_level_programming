@@ -1,19 +1,20 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * main- Entry point
- * @void: Null value
+ * main - Prints numbers.
  *
- * Description: Print numbers from 0 to 9
- * Return: Zero value
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int n;
+	int num;
 
-	for (n = '0'; n <= '9'; n++)
-		putchar(n);
+	for (num = 0; num <= 9; num++)
+	{
+		putchar((num % 10) + '0');
+	}
+
 	putchar('\n');
+
 	return (0);
 }
