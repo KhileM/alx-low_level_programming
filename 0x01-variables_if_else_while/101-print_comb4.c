@@ -1,42 +1,37 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * main- Entry point
- * @void: Null value
+ * main - A program that prints combination of all three digit numbers.
  *
- * Description: Print numbers from 00 to 99
- * Return: Zero value
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int i = 0;
-	int j, k;
-	int count = 0;
+	int hundreds;
+	int tens;
+	int ones;
+	int num;
 
-	while (i <= 7)
+	for (num = 0; num < 1000; num++)
 	{
-		j = i + 1;
-		while (j <= 8)
+		hundreds = num / 100;
+		tens = (num / 10) % 10;
+		ones = num % 10;
+
+		if (hundreds < tens && tens < ones)
 		{
-			k = j + 1;
-			while (k <= 9)
+			putchar(hundreds + '0');
+			putchar(tens + '0');
+			putchar(ones + '0');
+
+			if (num < 700)
 			{
-				putchar(i + '0');
-				putchar(j + '0');
-				putchar(k + '0');
-				if (count != 119)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-				k++;
-				count++;
+				putchar(',');
+				putchar(' ');
 			}
-			j++;
 		}
-		i++;
 	}
 	putchar('\n');
+
 	return (0);
 }
