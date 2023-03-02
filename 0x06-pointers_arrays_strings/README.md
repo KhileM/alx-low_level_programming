@@ -1,0 +1,1 @@
+A pointer has a specific type that indicates the type of object it can point to. An array is a contiguous ordered sequence of elements; each element is an object, and all the elements of an array are of the same type. A string is defined as "a contiguous sequence of characters terminated by and including the first null character".
