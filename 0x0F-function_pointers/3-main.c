@@ -1,25 +1,40 @@
-#ifndef _CALC_H_
-#define _CALC_H_
+#include "3-calc.h"
 
-#include <stdlib.h>
-#include <stdio.h>
 /**
- * struct op - Struct op
+ * main - check the code for ALX students.
+ * @argc: argument count.
+ * @argv: argument vector.
  *
- * @op: The operator
- * @f: The function associated
+ * Return: Always 0.
  */
-typedef struct op
+int main(int argc, char *argv[])
 {
-	char *op;
-	int (*f)(int a, int b);
-} op_t;
+	int a, b;
+	int (*operation)(int, int);
 
-int op_add(int a, int b);
-int op_sub(int a, int b);
-int op_mul(int a, int b);
-int op_div(int a, int b);
-int op_mod(int a, int b);
-int (*get_op_func(char *s))(int, int);
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
-#endif
+	if (argv[2][1])
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	operation = get_op_func(argv[2]);
+
+	if (operation == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	printf("%d\n", operation(a, b));
+	return (0);
+}
