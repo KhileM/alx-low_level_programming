@@ -12,10 +12,10 @@
  */
 int pop_listint(listint_t **head)
 {
-	if (*head == NULL)  /* Use a guard clause to check for an empty list */
+	if (*head == NULL)
 		return (0);
 
-	int data = (*head)->n;  /* Use a temporary variable for readability */
+	int data = (*head)->n;
 	listint_t *tmp = *head;
 
 	*head = (*head)->next;
