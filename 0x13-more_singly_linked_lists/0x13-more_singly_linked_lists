@@ -1,0 +1,59 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * count_unique_nodes - Counts the number of unique nodes
+ *                      in a circular linked list.
+ * @head: A pointer to the head of the list to check.
+ *
+ * Return: The number of unique nodes in the list.
+ */
+size_t count_unique_nodes(const listint_t *head)
+{
+	const listint_t *slow_ptr = head;
+	const listint_t *fast_ptr = head;
+	size_t count = 0;
+
+	while (fast_ptr && fast_ptr->next)
+	{
+		slow_ptr = slow_ptr->next;
+		fast_ptr = fast_ptr->next->next;
+
+		if (slow_ptr == fast_ptr)
+		{
+			slow_ptr = slow_ptr->next;
+			count++;
+
+			while (slow_ptr != fast_ptr)
+			{
+				slow_ptr = slow_ptr->next;
+				count++;
+			}
+
+			return count;
+		}
+	}
+
+	return count;
+}
+
+/**
+ * print_listint_safe - Prints a listint_t list safely.
+ * @head: A pointer to the head of the listint_t list.
+ *
+ * Return: The number of nodes in the list.
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t count = count_unique_nodes(head);
+
+	for (; head && count > 0; head = head->next, count--)
+		printf("[%p] %d\n", (void *)head, head->n);
+
+	if (head)
+		printf("-> [%p] %d\n", (void *)head, head->n);
+
+	return count_unique_nodes(head) + count;
+}
