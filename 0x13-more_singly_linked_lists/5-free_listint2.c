@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "lists.h"
+#include "list.h"
 
 /**
  * free_listint2 - Frees a listint_t list.
- * @head: A pointer to the address of the head of the listint_t list.
  *
- * Description: This function frees each node of a linked list and sets the
- * head pointer to NULL.
+ * @head - A pointer to the address of the head of the listint_t list.
+ *
+ * Return: Sets the head pointer to NULL.
  */
 void free_listint2(listint_t **head)
 {
