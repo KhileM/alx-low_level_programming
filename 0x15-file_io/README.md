@@ -1,0 +1,5 @@
+File I/O (Input/Output) refers to the operations that are performed on files or streams of data in a computer system. These operations involve reading data from a file into memory or writing data from memory to a file. File I/O is an essential aspect of programming as it allows programs to store and retrieve data persistently from disk, as opposed to storing data in volatile memory (RAM), which is lost when the program terminates.
+
+File I/O involves opening a file, reading or writing data to the file, and closing the file when finished. In Unix-like operating systems, file I/O is typically performed using system calls such as open(), read(), write(), and close(). These system calls interact with the operating system kernel to manage the file system and perform the requested file operations.
+
+File I/O is used in a variety of applications such as text editors, databases, web servers, and operating systems themselves. Many programming languages provide built-in support for file I/O, including C, C++, Java, Python, and many others.
