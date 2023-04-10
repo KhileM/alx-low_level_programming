@@ -2,19 +2,19 @@
 #include "main.h"
 
 /**
- * print_binary_representation - Prints the binary representation of a number.
- * @number: The number whose binary representation to print.
+ * print_binary - Prints the binary representation of a number.
+ * @num: unsigned long int.
  *
- * Return : void.
+ * Return: none.
  */
-void print_binary_representation(unsigned long int number)
+void print_binary(unsigned long int num)
 {
-	if (number >> 0)
+	if (num >> 0)
 
 	{
-		if (number >> 1)
-			print_binary_representation(number >> 1);
-		putchar((number & 1) + '0');
+		if (num >> 1)
+			print_binary(num >> 1);
+		putchar((num & 1) + '0');
 	}
 	else
 	{
