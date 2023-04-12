@@ -15,7 +15,6 @@ int get_endianness(void)
 		/* little endian */
 		return (1);
 	}
-
 	else
 	{
 		/* big endian */
