@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <errno.h>
+
+#define BUUFER_SIZE 1024
 
 char *create_buffer(char *file);
 void close_file(int fd);
