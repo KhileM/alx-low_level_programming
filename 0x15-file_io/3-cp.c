@@ -65,10 +65,12 @@ int main(int argc, char *argv[])
 int from, to, r, w;
 char *buffer;
 
+const char *Usage = "cp file_from file to\n";
+
 if (argc != 3)
 {
-	dprintf(STDERR_FILENO, *Usage : cp file_from file_to\n");
-	exit (97);
+	dprintf(STDERR_FILENO, "%s", Usage);
+	exit(97);
 }
 
 buffer = create_buffer(argv[2]);
@@ -79,7 +81,7 @@ to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 do {
 	if (from == -1 || r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error : Can't read from file % s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error : Can't read from file %s\n", argv[1]);
 		free(buffer);
 		exit(98);
 	}
@@ -87,7 +89,7 @@ do {
 	w = write(to, buffer, r);
 	if (to == -1 || w == -1)
 	{
-		dprintf(STDERR_FILENO, "Error : Can't write to % s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error : Can't write to %s\n", argv[2]);
 		free(buffer);
 
 		exit(99);
