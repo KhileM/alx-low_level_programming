@@ -65,7 +65,7 @@ size_t listint_len(count listint_t *h)
 
 	while (h != NULL)
 	{
-		count++
+		count++;
 		h = h->next;
 	}
 
