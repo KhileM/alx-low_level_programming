@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-#define BUUFER_SIZE 1024
+#define BUFFER_SIZE 1024
 
 char *create_buffer(char *file);
 void close_file(int fd);
@@ -46,7 +46,6 @@ void close_file(int fd)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 				exit(100);
-				;
 	}
 }
 
@@ -76,7 +75,7 @@ if (argc != 3)
 	exit(97);
 }
 
-buffer = create_buffer(argv[2]);
+buffer = create_buffer(argv[1]);
 from = open(argv[1], O_RDONLY);
 r = read(from, buffer, 1024);
 to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
